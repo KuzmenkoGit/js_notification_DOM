@@ -6,11 +6,15 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const descriptionElement = document.createElement('p');
 
   notificationElement.classList.add('notification');
-  notificationElement.classList.add(type);
+  notificationElement.position = 'absolute';
   notificationElement.style.top = posTop + 'px';
   notificationElement.style.right = posRight + 'px';
   notificationElement.appendChild(titleElement);
   notificationElement.appendChild(descriptionElement);
+
+  if (['success, warning, error'].includes(type)) {
+    notificationElement.classList.add(type);
+  }
 
   titleElement.classList.add('title');
   titleElement.textContent = title;
