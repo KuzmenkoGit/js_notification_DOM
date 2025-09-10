@@ -12,7 +12,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notificationElement.appendChild(titleElement);
   notificationElement.appendChild(descriptionElement);
 
-  if (['success, warning, error'].includes(type)) {
+  if (['success', 'warning', 'error'].includes(type)) {
     notificationElement.classList.add(type);
   }
 
